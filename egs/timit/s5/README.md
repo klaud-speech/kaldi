@@ -1,10 +1,10 @@
 # Acoustic Feature and Phone Annotation Extraction from the Kaldi
 
-[Kaldi](http://kaldi-asr.org) has made use of special data preparation where audio and lingustic data are utilized for ASR training. In order to use these data for other systems, we extract 3 types of normalized acoustic features (MFCC 39th, log Mel filter bank 40th, and log Mel filter bank 120th) and transcriptions. It is written for TIMIT corpus but not limited to others if available.
+[Kaldi](http://kaldi-asr.org) has made use of special data preparation where audio and linguistic data are utilized for ASR training. In order to use these data for other systems, we extract 3 types of normalized acoustic features (MFCC 39th, log Mel filter bank 40th, and log Mel filter bank 120th) and transcriptions. It is written for TIMIT corpus but not limited to others if available.
 
 ## Kaldi installation
 
-Details of the Kaldi installation are decribed [HERE](http://kaldi-asr.org/doc/install.html).
+Details of the Kaldi installation are described [HERE](http://kaldi-asr.org/doc/install.html).
 
 ## TIMIT corpus
 
@@ -21,12 +21,12 @@ You can simply run the following script.
 ```
 
 This script performs
-1. Re-align phone annotatation sequence corresponding to the length of acoustic framing scheme (400 samples of window and 160 samples of shift at 16Khz)
+1. Re-align phone annotation sequence corresponding to the length of acoustic framing scheme (400 samples of window and 160 samples of shift at 16Khz)
 2. Save normalized acoustic feature data into text format
-3. Find mismatched sequences beetween acoustic feature and phone annotation
+3. Find mismatched sequences between acoustic feature and phone annotation
 4. Produces 2 set of data:
-   * Clean: no frame difference bewteen acoustic feature and phone sequence
-   * Noisy: 1 frame difference bewteen acoustic feature and phone sequence
+   * Clean: no frame difference between acoustic feature and phone sequence
+   * Noisy: 1 frame difference between acoustic feature and phone sequence
 
 | Type              | Clean               | Noisy                |
 | ----------------- |---------------------|----------------------|
