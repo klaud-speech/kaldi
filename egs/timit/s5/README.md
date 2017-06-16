@@ -39,7 +39,7 @@ This script performs
 | Log Mel fbank 120 | train.fbank120.clean | train.fbank120.noisy |
 |                   | dev.fbank120.clean   | dev.fbank120.noisy   |
 |                   | test.fbank120.clean  | test.fbank120.noisy  |
-| Transcript        | train.tgt.clean      | train.tgt.noisy |
+| Phone transcript  | train.tgt.clean      | train.tgt.noisy |
 |                   | dev.tgt.clean        | dev.tgt.noisy   |
 |                   | test.tgt.clean       | test.tgt.noisy  |
 
