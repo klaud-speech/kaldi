@@ -1,6 +1,6 @@
 # Acoustic Feature and Phone Annotation Extraction from the Kaldi
 
-[Kaldi](http://kaldi-asr.org) has made use of special data preparation where audio and linguistic data are utilized for ASR training. In order to use these data for other systems, we extract 3 types of normalized acoustic features (MFCC 39th, log Mel filter bank 40th, and log Mel filter bank 120th) and transcriptions. It is written for TIMIT corpus but not limited to others if available.
+[Kaldi](http://kaldi-asr.org) has made use of special data preparation where audio and linguistic data are utilized for the ASR training. In order to use these data for other systems, we extract 3 types of normalized acoustic features (MFCC 39th, log Mel filter bank 40th, and log Mel filter bank 120th) and phone transcriptions. It is written for TIMIT corpus but not limited to others if available.
 
 ## Kaldi installation
 
@@ -8,9 +8,9 @@ Details of the Kaldi installation are described [HERE](http://kaldi-asr.org/doc/
 
 ## TIMIT corpus
 
-The information of TIMIT corpus is [HERE](https://catalog.ldc.upenn.edu/ldc93s1). I hope you have permission to access it.
+Details of TIMIT corpus is [HERE](https://catalog.ldc.upenn.edu/ldc93s1). I hope you have permission to use it.
 
-In this repository, you need to define where TIMIT corpus is located 2 scripts files: [run_feat_extract.sh](https://github.com/homink/kaldi/blob/FeatureText/egs/timit/s5/run_feat_extract.sh) and [onmt/build_tgt.sh](https://github.com/homink/kaldi/blob/FeatureText/egs/timit/s5/onmt/build_tgt.sh).
+In this repository, you need to define where TIMIT corpus is located in 2 scripts files: [run_feat_extract.sh](https://github.com/homink/kaldi/blob/FeatureText/egs/timit/s5/run_feat_extract.sh) and [onmt/build_tgt.sh](https://github.com/homink/kaldi/blob/FeatureText/egs/timit/s5/onmt/build_tgt.sh).
 
 ## Execution
 
