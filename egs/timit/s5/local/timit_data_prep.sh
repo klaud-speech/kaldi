@@ -105,7 +105,7 @@ for x in train dev test; do
   cat $x.spk2utt | awk '{print $1}' | perl -ane 'chop; m:^.:; $g = lc($&); print "$_ $g\n";' > $x.spk2gender
 
   # Prepare STM file for sclite:
-  wav-to-duration --read-entire-file=true scp:${x}_wav.scp ark,t:${x}_dur.ark || exit 1
+  wav-to-duration --read-entire-file=true scp:${x}_sph.scp ark,t:${x}_dur.ark || exit 1
   awk -v dur=${x}_dur.ark \
   'BEGIN{
      while(getline < dur) { durH[$1]=$2; }
