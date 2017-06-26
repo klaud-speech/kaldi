@@ -95,7 +95,7 @@ for x in train dev test; do
   cat ${x}.trans | $local/timit_norm_trans.pl -i - -m $conf/phones.60-48-39.map -to 48 | sort > $x.text || exit 1;
 
   # Create wav.scp
-  awk '{printf("%s '$sph2pipe' -f wav %s |\n", $1, $2);}' < ${x}_sph.scp > ${x}_wav.scp
+  awk '{printf("%s %s\n", $1, $2);}' < ${x}_sph.scp > ${x}_wav.scp
 
   # Make the utt2spk and spk2utt files.
   cut -f1 -d'_'  $x.uttids | paste -d' ' $x.uttids - > $x.utt2spk
@@ -105,7 +105,7 @@ for x in train dev test; do
   cat $x.spk2utt | awk '{print $1}' | perl -ane 'chop; m:^.:; $g = lc($&); print "$_ $g\n";' > $x.spk2gender
 
   # Prepare STM file for sclite:
-  wav-to-duration --read-entire-file=true scp:${x}_sph.scp ark,t:${x}_dur.ark || exit 1
+  wav-to-duration --read-entire-file=true scp:${x}_wav.scp ark,t:${x}_dur.ark || exit 1
   awk -v dur=${x}_dur.ark \
   'BEGIN{
      while(getline < dur) { durH[$1]=$2; }
